@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shanza Lab 4</title>
+<title>Shanza Lab 5</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,80 +23,128 @@
   </nav>
 </header>
 
-<h2 id="about" class="section-title">About Me</h2>
-<p class="content">Shanza <mark>aka user dead</mark> 5th semester BS Computer Science student at NUST.</p>
-<p class="content small">Last updated: <time datetime="2026-09-28">September 28, 2026</time></p>
+<div class="container">
 
-<h2 id="skills" class="section-title">Skills</h2>
-<div class="content grid">
-  <div class="box col-4">HTML & CSS</div>
-  <div class="box col-4">JavaScript</div>
-  <div class="box col-4">Git & GitHub</div>
+  <!-- About -->
+  <h2 id="about" class="section-title">About Me</h2>
+  <div class="row">
+    <div class="col-12">
+      <p class="box">Shanza <mark>aka user dead</mark> 5th semester BS Computer Science student at NUST.</p>
+    </div>
+    <div class="col-12">
+      <p class="small">Last updated: <time datetime="2026-09-28">September 28, 2026</time></p>
+    </div>
+  </div>
+
+  <!-- Skills: 4 + 4 + 4 | tablet: 6 + 6 + 12 | mobile: 12 -->
+  <h2 id="skills" class="section-title">Skills</h2>
+  <div class="row">
+    <div class="col-4 md-6 sm-12"><div class="box">HTML &amp; CSS</div></div>
+    <div class="col-4 md-6 sm-12"><div class="box">JavaScript</div></div>
+    <div class="col-4 md-12 sm-12"><div class="box">Git &amp; GitHub</div></div>
+  </div>
+
+  <!-- Education: 8 + 4 | tablet: 8 + 4 | mobile: 12 -->
+  <h2 id="education" class="section-title">Education</h2>
+  <div class="row">
+    <div class="col-8 md-8 sm-12"><div class="box">BS Computer Science NUST (2024–2028)</div></div>
+    <div class="col-4 md-4 sm-12"><div class="box">FSc: Garrison APSACS (2021–2023)</div></div>
+  </div>
+
+  <!-- Experience: 4 + 4 + 4 | tablet: 6 + 6 + 12 | mobile: 12 -->
+  <h2 id="experience" class="section-title">Experience</h2>
+  <div class="row">
+    <div class="col-4 md-6 sm-12">
+      <div class="box">
+        <strong>Mobile App Developer</strong><br>
+        Tichkule &amp; Tichkule Mobile Co.
+      </div>
+    </div>
+    <div class="col-4 md-6 sm-12">
+      <div class="box">
+        <strong>Data Analyst</strong><br>
+        Data Crumbs
+      </div>
+    </div>
+    <div class="col-4 md-12 sm-12">
+      <div class="box">
+        <strong>MERN Developer</strong><br>
+        NUST Lab
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects: 6 + 6 / 6 + 6 | tablet: 6 + 6 | mobile: 12 -->
+  <h2 id="projects" class="section-title">Projects</h2>
+  <div class="row">
+    <div class="col-6 md-6 sm-12">
+      <div class="box">
+        <strong>SafeSphere</strong><br>
+        A safety app built to help users report and respond to emergencies quickly.
+      </div>
+    </div>
+    <div class="col-6 md-6 sm-12">
+      <div class="box">
+        <strong>NUST Secure Portal</strong><br>
+        A portal focused on improving safety and security for NUST students.
+      </div>
+    </div>
+    <div class="col-6 md-6 sm-12">
+      <div class="box">
+        <strong>Tic Tac Toe</strong><br>
+        A simple interactive Tic Tac Toe game built with JavaScript.
+      </div>
+    </div>
+    <div class="col-6 md-6 sm-12">
+      <div class="box">
+        <strong>Plagiarism Checker</strong><br>
+        A DSA project that detects plagiarism between text documents.
+      </div>
+    </div>
+  </div>
+
+  <!-- Media -->
+  <h2 id="media" class="section-title">Canvas</h2>
+  <div class="row">
+    <div class="col-4 md-6 sm-12">
+      <canvas id="myCanvas" width="200" height="100"></canvas>
+    </div>
+  </div>
+
+  <h2 class="section-title">Video</h2>
+  <div class="row">
+    <div class="col-12">
+      <video id="myVideo" class="media" src="Screen Recording 2026-06-30 180944.mp4" controls></video>
+    </div>
+  </div>
+
+  <h2 class="section-title">Audio</h2>
+  <div class="row">
+    <div class="col-12">
+      <audio id="myAudio" class="media" src="billie eilish_ wildflower (acapella w amplified background vocals).mp3" controls></audio>
+    </div>
+  </div>
+
+  <!-- Contact: col-8 pushed right by offset-2 so it is centered -->
+  <h2 id="contact" class="section-title">Contact Form</h2>
+  <div class="row">
+    <div class="col-8 offset-2 md-12 md-offset-0 sm-12">
+      <form class="form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" rows="5" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
 </div>
-
-<h2 id="education" class="section-title">Education</h2>
-<div class="content grid">
-  <div class="box col-8">BS Computer Science NUST (2024–2028)</div>
-  <div class="box col-4">FSc:Garrison APSACS (2021–2023)</div>
-</div>
-
-<h2 id="experience" class="section-title">Experience</h2>
-<div class="content grid">
-  <div class="box col-6">
-    <strong>Mobile App Developer</strong><br>
-    Tichkule &amp; Tichkule Mobile Co.
-  </div>
-  <div class="box col-6">
-    <strong>Data Analyst</strong><br>
-    Data Crumbs
-  </div>
-  <div class="box col-6">
-    <strong>MERN Developer</strong><br>
-    NUST Lab
-  </div>
-</div>
-
-<h2 id="projects" class="section-title">Projects</h2>
-<div class="content grid">
-  <div class="box col-6">
-    <strong>SafeSphere</strong><br>
-    A safety app built to help users report and respond to emergencies quickly.
-  </div>
-  <div class="box col-6">
-    <strong>NUST Secure Portal</strong><br>
-    A portal focused on improving safety and security for NUST students.
-  </div>
-  <div class="box col-6">
-    <strong>Tic Tac Toe</strong><br>
-    A simple interactive Tic Tac Toe game built with JavaScript.
-  </div>
-  <div class="box col-6">
-    <strong>Plagiarism Checker</strong><br>
-    A DSA project that detects plagiarism between text documents.
-  </div>
-</div>
-
-<h2 id="media" class="section-title">Canvas</h2>
-<canvas id="myCanvas" class="content" width="200" height="100" style="border:1px solid black;"></canvas>
-
-<h2 class="section-title">Video</h2>
-<video id="myVideo" class="content media" src="Screen Recording 2026-06-30 180944.mp4" controls></video>
-<h2 class="section-title">Audio</h2>
-<audio id="myAudio" class="content media" src="billie eilish_ wildflower (acapella w amplified background vocals).mp3" controls></audio>
-
-<h2 id="contact" class="section-title">Contact Form</h2>
-<form class="content form">
-  <label for="name">Name:</label>
-  <input type="text" id="name" required>
-
-  <label for="email">Email:</label>
-  <input type="email" id="email" required>
-
-  <label for="message">Message:</label>
-  <textarea id="message" required></textarea>
-
-  <button type="submit">Submit</button>
-</form>
 
 <footer id="site-footer">
   <p>&copy; 2026 Shanza's Website</p>

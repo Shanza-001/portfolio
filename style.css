@@ -9,12 +9,8 @@ body {
   background-attachment: fixed;
   color: #222;
 }
-.content {
-  display: block;
-  width: 90%;
-  max-width: 800px;
-  margin: 15px auto;
-}
+
+/* ---------- Header / Nav ---------- */
 #site-header {
   background-color: #100000dd;
   color: white;
@@ -42,27 +38,81 @@ body {
 .nav-list a:hover {
   color: #ff4d4d;
 }
+
+/* =====================================================
+   12-COLUMN GRID  (container > row > col-1 ... col-12)
+   ===================================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;          /* cancels the column gutters at the edges */
+}
+
+/* every column: 15px left + right padding = 30px gutter between columns */
+[class*="col-"] {
+  padding: 0 15px;
+  margin-bottom: 20px;
+}
+
+/* width = n / 12 * 100% */
+.col-1  { width: 8.3333%; }
+.col-2  { width: 16.6667%; }
+.col-3  { width: 25%; }
+.col-4  { width: 33.3333%; }
+.col-5  { width: 41.6667%; }
+.col-6  { width: 50%; }
+.col-7  { width: 58.3333%; }
+.col-8  { width: 66.6667%; }
+.col-9  { width: 75%; }
+.col-10 { width: 83.3333%; }
+.col-11 { width: 91.6667%; }
+.col-12 { width: 100%; }
+
+/* offset: pushes a column to the right, leaving empty space on its left */
+.offset-1 { margin-left: 8.3333%; }
+.offset-2 { margin-left: 16.6667%; }
+.offset-3 { margin-left: 25%; }
+.offset-4 { margin-left: 33.3333%; }
+.offset-5 { margin-left: 41.6667%; }
+.offset-6 { margin-left: 50%; }
+
+/* ---------- Titles ---------- */
 .section-title {
-  margin: 30px auto 12px auto;
-  width: 90%;
-  max-width: 800px;
+  margin: 30px 0 14px 0;
   color: #fff;
   font-size: 22px;
   border-left: 4px solid #ff4d4d;
   padding-left: 10px;
 }
-p.content {
+
+/* ---------- Boxes ---------- */
+.box {
   background: #ffffffee;
   color: #222;
-  padding: 12px 15px;
+  border-left: 4px solid #c62828;
+  padding: 14px;
   border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: 0.3s;
+  height: 100%;
+}
+.box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+}
+p.box {
+  padding: 12px 15px;
 }
 .small {
   font-size: 12px;
   font-style: italic;
-  background: none !important;
   color: #ddd;
-  padding: 0 !important;
 }
 mark {
   background-color: #ff4d4d;
@@ -71,40 +121,21 @@ mark {
   border-radius: 3px;
 }
 
-/* 12-column grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 12px;
-}
-.box {
-  background: #ffffffee;
-  color: #222;
-  border: none;
-  border-left: 4px solid #c62828;
-  padding: 14px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-  transition: 0.3s;
-}
-.box:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
-}
-.col-4 { grid-column: span 4; }
-.col-6 { grid-column: span 6; }
-.col-8 { grid-column: span 8; }
-
+/* ---------- Media ---------- */
 #myCanvas {
+  display: block;
+  width: 100%;
+  height: auto;
   background-color: #c62828;
   border-radius: 8px;
-  border: none !important;
 }
 .media {
+  display: block;
   width: 100%;
   border-radius: 8px;
 }
 
+/* ---------- Form ---------- */
 .form {
   display: flex;
   flex-direction: column;
@@ -123,6 +154,7 @@ mark {
   border: 1px solid #ccc;
   border-radius: 6px;
   margin-top: 4px;
+  font-family: inherit;
 }
 .form button {
   margin-top: 18px;
@@ -138,6 +170,8 @@ mark {
   background-color: #ff4d4d;
   color: #222;
 }
+
+/* ---------- Footer ---------- */
 #site-footer {
   background-color: #100000dd;
   color: #ddd;
@@ -146,11 +180,27 @@ mark {
   margin-top: 40px;
 }
 
-/* media query for small screens */
+/* =====================================================
+   MEDIA QUERIES
+   ===================================================== */
+
+/* Tablet: 768px and below -> md-* classes override the desktop widths */
+@media (max-width: 768px) {
+  .md-4  { width: 33.3333%; }
+  .md-6  { width: 50%; }
+  .md-8  { width: 66.6667%; }
+  .md-12 { width: 100%; }
+  .md-offset-0 { margin-left: 0; }
+
+  .section-title { font-size: 20px; }
+}
+
+/* Mobile: 480px and below -> everything stacks full width */
 @media (max-width: 480px) {
-  .col-4, .col-6, .col-8 {
-    grid-column: span 12;
-  }
+  .sm-12 { width: 100%; }
+  .offset-2 { margin-left: 0; }
+
+  .section-title { font-size: 18px; }
   .nav-list li {
     display: block;
     margin: 6px 0;
